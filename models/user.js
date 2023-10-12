@@ -18,8 +18,8 @@ class User {
     this.Username = Username;
     this.Email = Email;
     this.Password = Password;
-    this.ProfileImage = ProfileImage;
-    this.Images = Images;
+    this.ProfileImage = ProfileImage || null;
+    this.Images = Images || null;
     this.Description = Description;
     this.Gender = Gender;
     this.isAdmin = isAdmin;
