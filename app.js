@@ -10,9 +10,11 @@ app.use('/api', apiRouter);
 // Adding routes to the router
 const userRoutes = require('./routes/userRoutes');
 const adminRoutes = require('./routes/adminRoutes');
+const auth = require('./routes/auth');
 
 apiRouter.use('/users', userRoutes);
-apiRouter.use('/users', adminRoutes);
+apiRouter.use('/admin', adminRoutes);
+apiRouter.use('/auth', auth);
 
 // App 
 app.get('/', (req, res) => {

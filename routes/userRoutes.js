@@ -1,12 +1,9 @@
 const express = require('express');
 const router = express.Router();
 
-
-router.post('/register', (req, res) => {
+router.post('/', (req, res) => {
     res.send('User register');
 });
-
-
 
 
 router.get('/list', (req, res) => {
