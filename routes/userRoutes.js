@@ -1,13 +1,10 @@
+const newUser = require('../controllers/user');
+
 const express = require('express');
 const router = express.Router();
 
-router.post('/', (req, res) => {
-    res.send('User register');
-});
-
-
 router.get('/list', (req, res) => {
-  res.send('User list');
+  res.send(`${newUser.Email} test`);
 });
 
 router.get('/:id', (req, res) => {
