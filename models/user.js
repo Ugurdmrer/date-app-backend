@@ -1,6 +1,5 @@
 class User {
   constructor(
-    ID,
     Name,
     Surname,
     Username,
@@ -12,7 +11,6 @@ class User {
     Gender,
     isAdmin
   ) {
-    this.ID = ID;
     this.Name = Name;
     this.Surname = Surname;
     this.Username = Username;

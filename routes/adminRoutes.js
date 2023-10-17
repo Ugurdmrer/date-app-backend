@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const addUser = require('../controllers/user.js');
+const User = require("../models/user.js");
 
 router.get('/getAllUsers', (req, res) => {
   res.send('User list');
@@ -35,22 +36,14 @@ router.post('/addAdmin', (req, res) => {
 });
 
 
-router.post('/addUser', (req, res) => {
+router.post('/addUser', async (req, res) => {
     try {
-        res.send(
-            addUser(
-                this.name = req.body.name,
-                this.surname = req.body.surname,
-                this.username = req.body.username,
-                this.email = req.body.email,
-                this.password = req.body.password,
-                this.profileImage = req.body.profileImage,
-                this.images = req.body.images,
-                this.description = req.body.description,
-                this.gender = req.body.gender,
-                this.isAdmin = req.body.isAdmin
-            ) 
+        console.log(req.body)
+        const newUser = new User(req.body)
+        await addUser(
+            newUser
         )
+        res.status(201).json({ message: 'Kullanıcı başarıyla eklendi' });
     }catch{
         res.send(`User not added. request body:  ${req.body}`)
     }

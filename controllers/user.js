@@ -4,7 +4,7 @@ const client = require("../database/database.js");
 
 // Add User
 
-async function addUser(newUser) {
+function addUser(newUser) {
   try {
     // SQL sorgusu kullanıcı ekleme
     const insertQuery = `
@@ -26,6 +26,7 @@ async function addUser(newUser) {
       Gender,
       Admin,
     } = newUser;
+
     const values = [
       Name,
       Surname,
@@ -38,14 +39,10 @@ async function addUser(newUser) {
       Gender,
       Admin,
     ];
-
     // Kullanıcıyı ekleyin ve eklenen kullanıcının ID'sini alın
-    const result = await client.query(insertQuery, values);
+    const result = client.query(insertQuery, values);
 
-    // Eklenen kullanıcının ID'si
-    const newUserId = result.rows[0].ID;
-
-    console.log(`Yeni kullanıcı ekledi. ID: ${newUserId} Username: ${Username}`);
+    console.log(`Yeni kullanıcı ekledi.  Username: ${values[2]}`);
   } catch (error) {
     console.error("Kullanıcı eklenirken hata oluştu:", error);
   }
