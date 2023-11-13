@@ -1,25 +1,25 @@
 class User {
-  constructor(
-    Name,
-    Surname,
-    Username,
-    Email,
-    Password,
-    ProfileImage,
-    Images,
-    Description,
-    Gender,
-    isAdmin
-  ) {
-    this.Name = Name;
-    this.Surname = Surname;
-    this.Username = Username;
-    this.Email = Email;
-    this.Password = Password;
-    this.ProfileImage = ProfileImage || null;
-    this.Images = Images || null;
-    this.Description = Description;
-    this.Gender = Gender;
+  constructor({
+    name,
+    surname,
+    username,
+    email,
+    password,
+    profileImage,
+    images,
+    description,
+    gender,
+    isAdmin,
+  }) {
+    this.Name = name;
+    this.Surname = surname;
+    this.Username = username;
+    this.Email = email;
+    this.Password = password;
+    this.ProfileImage = profileImage || null;
+    this.Images = images || null;
+    this.Description = description;
+    this.Gender = gender;
     this.isAdmin = isAdmin;
   }
 }

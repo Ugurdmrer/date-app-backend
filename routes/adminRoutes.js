@@ -38,10 +38,8 @@ router.post('/addAdmin', (req, res) => {
 
 router.post('/addUser', async (req, res) => {
     try {
-        console.log(req.body)
-        const newUser = new User(req.body)
         await addUser(
-            newUser
+            req.body
         )
         res.status(201).json({ message: 'Kullanıcı başarıyla eklendi' });
     }catch{
